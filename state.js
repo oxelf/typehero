@@ -30,21 +30,21 @@ export class GameState {
     }
 
     async newWords() {
-        console.log("generating with language: ", this.language);
+        console.log("generating with language: ", this.language, " amount: ", this.wordAmount);
         this.reset();
-        this.words = await generateWords(this.wordAmount, {language: this.language});
+        this.words = await generateWords(this.wordAmount, {language: this.language, mode: this.mode});
+        this.wordAmount = this.words.length;
     }
 
     loadPreferences() {
-        console.log("language: ", localStorage.getItem("typing-language"));
         this.language = localStorage.getItem("typing-language") || "english";
-        this.wordAmount = localStorage.getItem("typing-words") || 50;
+        this.mode = localStorage.getItem("typing-mode") || "words";
+        this.wordAmount = parseInt(localStorage.getItem("typing-words")) || 25;
     }
 
      listen() {
         window.addEventListener("opts-change", function() {
             let language = localStorage.getItem("typing-language") || "english";
-            console.log("language", language);
         });
     }
 

@@ -1,5 +1,4 @@
 export function drawGraph(state) {
-    console.log("drawing graph with state: ", state);
     let canvas = document.getElementById("wpm-chart");
     const style = getComputedStyle(canvas);
     canvas.width = parseInt(style.width);
@@ -15,7 +14,6 @@ export function drawGraph(state) {
 
     let wpms = [];
     for (let t = 0; t < maxTime; t++) {
-        console.log("looking for t= ", t);
         let c = 0;
         for (let i = 0; i < state.wpmTimeSeries.length; i++) {
             if (state.wpmTimeSeries[i] <= t * 1000) {
@@ -28,8 +26,6 @@ export function drawGraph(state) {
             wpms.push(60 / (t / c));
         }
     }
-
-    console.log("wpms: ", wpms);
 
     let highestWpm = Math.max(...wpms);
     let pixelPerWpm = height / highestWpm;
@@ -73,7 +69,6 @@ export function drawGraph(state) {
     for (let i = 1; i < wpms.length; i++) {
         let x = paddingLeft + i * pixelPerStep;
         let y = height - wpms[i] * pixelPerWpm;
-        console.log("drawing from ", lastX, lastY, " to ", x, y);
         ctx.beginPath();
         ctx.moveTo(lastX, lastY);
         ctx.lineTo(x, y);

@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Typehero - Typing Test</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" as="style">
 </head>
 <body>
 <div style="display: flex; flex-direction: column; height: 100vh; justify-content: space-between">
@@ -24,7 +24,7 @@
     </div>
     <div style="display: flex; flex-direction: column;  justify-content: center; align-items: center; margin-left: 32px; margin-right: 32px ">
         <div class="options-menu">
-            <div class="option-selected">
+            <div class="option">
                 <h5>Words</h5>
                 </div>
             <div class="option">
@@ -34,7 +34,7 @@
             <div class="option">
                 <h5>10</h5>
             </div>
-            <div class="option-selected">
+            <div class="option">
                 <h5>25</h5>
             </div>
             <div class="option">
@@ -67,6 +67,7 @@
         </div>
     <h6>footer</h6>
 </div>
+<script type="module" src="options.js"></script>
 <script type="module" src="statistics.js"></script>
 <script type="module" src="dropdown.js"></script>
 <script type="module" src="generate.js"></script>

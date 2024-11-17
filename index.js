@@ -1,7 +1,8 @@
 import { GameState} from "./state.js";
 import { initDropdown } from "./dropdown.js";
-
+import { initOptions } from "./options.js";
 console.log("loaded");
+
 
 async function run() {
     let state = new GameState();
@@ -35,6 +36,7 @@ async function run() {
         state.renderWords();
     }, false);
 
+    initOptions(state);
 }
 
 

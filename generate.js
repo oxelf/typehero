@@ -1,19 +1,34 @@
 let wordCache = {};
+let quoteCache = {};
 
 export async function generateWords(length, opts) {
     let language = opts.language || "english";
-    let words = await getWords(language);
-    console.log("generating");
-    let randomWords = [];
-    for (let i = 0; i < length; i++) {
-        let randomIndex = Math.floor(Math.random() * words.length);
-        randomWords.push(words[randomIndex]);
+    if (opts.mode == "words") {
+        let words = await getWords(language);
+        let randomWords = [];
+        for (let i = 0; i < length; i++) {
+            let randomIndex = Math.floor(Math.random() * words.length);
+            randomWords.push(words[randomIndex]);
+        }
+        return randomWords;
+    } else {
+        let quotes = await getQuotes(language);
+        let randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+        return randomQuote.text.split(" ");
     }
-    return randomWords;
+}
+
+async function getQuotes(language) {
+    if (quoteCache[language]) {
+        return quoteCache[language];
+    }
+    let response = await fetch("quotes/" + language + ".json");
+    let data = await response.json();
+    quoteCache[language] = data.quotes;
+    return data.quotes;
 }
 
 async function getWords(language) {
-    console.log("getting words");
     if (wordCache[language]) {
         return wordCache[language];
     }
