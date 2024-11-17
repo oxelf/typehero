@@ -1,0 +1,227 @@
+:root {
+    --font-color: rgb(70, 71, 76);
+    --background-color: rgb(38, 40, 42);
+    --secondary-background-color: rgb(33, 34, 35);
+    --correct-font-color: white;
+    --wrong-font-color: red;
+    --hover-color: cyan;
+    --cursor-color: cyan;
+    --word-space: 10px;
+}
+
+.icon {
+    height: 24px;
+}
+
+.icon:hover {
+    cursor: pointer;
+    color: var(--hover-color);
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 4%;
+    margin-right: 4%;
+}
+
+@font-face {
+    font-family: 'Mono';
+    src: url('font/mono-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Mono';
+    src: url('font/mono-bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Mono', sans-serif;
+    color: var(--font-color);
+}
+
+html {
+    background-color: var(--background-color);
+}
+
+.content {
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding: 0 1%;
+    max-width: 1024px;
+    flex-wrap: wrap;
+}
+
+.cursor-space {
+    display: inline-block;
+    width: 2px;
+    height: 1.5em;
+    margin-top: 4px;
+}
+
+.letter {
+    margin-left: 2px;
+    font-size: 1.5em;
+    line-height: 1.5em;
+}
+
+.spacer {
+    height: 1.5em;
+    margin-left: 2px;
+    width: var(--word-space);
+}
+
+.dropdown-value {
+
+}
+
+.dropdown-value:hover {
+    color: var(--hover-color);
+    cursor: pointer;
+}
+.dropdown.h3:hover { cursor: pointer; color: var(--hover-color); }
+.dropdown {
+    position: relative;
+}
+.dropdown-content {
+    display: none;
+    top: 50%;
+    left: 50%;
+    flex-direction: column;
+    margin-top: 48px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    align-items: center;
+    z-index: 1;
+    background-color: var(--background-color);
+    border: 1px solid var(--correct-font-color);
+    width: 400px;
+    border-radius: 8px;
+}
+.dropdown-option {
+    width: 100%;
+    height: 24px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+.dropdown-option:hover {
+    background-color: var(--correct-font-color);
+}
+
+.blinking-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1.5em;
+    margin-top: 4px;
+    background-color: var(--cursor-color);
+    animation: blink 1.5s linear infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+.statistics-row {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 16px;
+}
+
+.statistics-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.statistics-column h3 {
+    margin: 0;
+}
+.statistics-column h2 {
+    margin: 0;
+    color: var(--correct-font-color);
+}
+
+.actions-row {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    position: absolute;
+    z-index: 1;
+}
+.tooltip:hover {
+    cursor: default;
+}
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+.option {
+    margin: 0;
+}
+
+.option:hover {
+    cursor: pointer;
+    color: var(--correct-font-color);
+}
+
+.option-selected {
+    color: var(--hover-color);
+}
+
+.options-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 4px;
+    background-color: var(--secondary-background-color);
+}
+
+.options-divider {
+    height: 80%;
+    width: 2px;
+    background-color: var(--font-color);
+}
+
+.options-menu h5 {
+    margin: 0;
+}
