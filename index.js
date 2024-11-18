@@ -2,8 +2,11 @@ import { GameState} from "./state.js";
 import { initDropdown } from "./dropdown.js";
 import { initOptions } from "./options.js";
 import {applyTheme}  from "./theme.js";
-
+import {showSelect} from "./select.js";
 console.log("loaded");
+
+let capsLock = false;
+ let themeOptions = ["rose_pine", "rose_pine_dawn", "8008", "retro_light", "carbon"];
 
 
 async function run() {
@@ -27,6 +30,13 @@ async function run() {
             case "Tab":
                 return;
         }
+        if (event.getModifierState("CapsLock")) {
+            capsLock = true;
+            document.getElementById("caps-lock").style.display = "flex";
+        } else {
+            capsLock = false;
+            document.getElementById("caps-lock").style.display = "none";
+        }
         state.input(event);
     });
 
@@ -40,6 +50,16 @@ async function run() {
     }, false);
 
     initOptions(state);
+
+    let themeButton = document.getElementById("theme-button");
+    themeButton.onclick = function() {
+        let theme = localStorage.getItem("theme") || "rose_pine";
+        showSelect(document.getElementById("theme-selection"),themeOptions, theme, function (theme) {
+           console.log("selected theme: ", theme);
+            localStorage.setItem("theme", theme);
+            applyTheme();
+        })
+    }
 }
 
 

@@ -226,3 +226,72 @@ html {
 .options-menu h5 {
     margin: 0;
 }
+
+.select-menu {
+    position: absolute;
+    left: 50%; top: 50%;
+    border-radius: 16px;
+    transform: translate(-50%, -50%);
+    width: min(80vw, 512px);
+    height: 80vh;
+    background-color: var(--background-color);
+}
+
+.select-menu-background {
+    display: none;
+    position: absolute;
+    left: 50%;top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    background-color: rgba(0, 0,0, 0.50)
+}
+
+.select-menu-input {
+    width: 100%;
+    height: 32px;
+    margin-left: 8px;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    color: var(--font-color);
+}
+
+.select-menu-input:focus {
+    outline: none;
+}
+
+.select-menu-icon {
+    height: 18px;
+    width: 18px;
+}
+
+.select-menu-option {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px;
+    gap: 16px;
+}
+
+.select-menu-option:hover {
+    background-color: var(--sub-background-color);
+    cursor: default;
+}
+
+.select-menu-list {}
+
+.select-menu-option-selected {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px;
+    gap: 16px;
+}
+
+
+.select-menu-option .select-menu-icon {
+    color: transparent;
+}
+
