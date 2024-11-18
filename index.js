@@ -1,10 +1,13 @@
 import { GameState} from "./state.js";
 import { initDropdown } from "./dropdown.js";
 import { initOptions } from "./options.js";
+import {applyTheme}  from "./theme.js";
+
 console.log("loaded");
 
 
 async function run() {
+    applyTheme();
     let state = new GameState();
     state.loadPreferences();
     await state.newWords();
@@ -17,11 +20,11 @@ async function run() {
                 return;
             case "Meta":
                 return;
-                case "Alt":
+            case "Alt":
                 return;
-                case "Control":
+            case "Control":
                 return;
-                case "Tab":
+            case "Tab":
                 return;
         }
         state.input(event);

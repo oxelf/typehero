@@ -3,10 +3,11 @@
     --background-color: rgb(38, 40, 42);
     --secondary-background-color: rgb(33, 34, 35);
     --correct-font-color: white;
-    --wrong-font-color: red;
-    --hover-color: cyan;
     --cursor-color: cyan;
+    --wrong-font-color: red;
+    --main-color: cyan;
     --word-space: 10px;
+    --sub-background-color: #030303;
 }
 
 .icon {
@@ -15,7 +16,7 @@
 
 .icon:hover {
     cursor: pointer;
-    color: var(--hover-color);
+    color: var(--main-color);
 }
 
 .header {
@@ -84,10 +85,10 @@ html {
 }
 
 .dropdown-value:hover {
-    color: var(--hover-color);
+    color: var(--main-color);
     cursor: pointer;
 }
-.dropdown.h3:hover { cursor: pointer; color: var(--hover-color); }
+.dropdown.h3:hover { cursor: pointer; color: var(--main-color); }
 .dropdown {
     position: relative;
 }
@@ -127,7 +128,7 @@ html {
     height: 1.5em;
     margin-top: 4px;
     background-color: var(--cursor-color);
-    animation: blink 1.5s linear infinite;
+    animation: blink 1s linear infinite;
 }
 
 @keyframes blink {
@@ -203,7 +204,7 @@ html {
 }
 
 .option-selected {
-    color: var(--hover-color);
+    color: var(--main-color);
 }
 
 .options-menu {
@@ -213,7 +214,7 @@ html {
     align-items: center;
     gap: 8px;
     padding: 4px;
-    background-color: var(--secondary-background-color);
+    background-color: var(--sub-background-color);
 }
 
 .options-divider {

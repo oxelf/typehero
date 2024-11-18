@@ -31,7 +31,7 @@ export function drawGraph(state) {
     let pixelPerWpm = height / highestWpm;
     let pixelPerStep = width / wpms.length;
     let secondTicks = wpms.length > 10 ? 10: wpms.length;
-    let color = getComputedStyle(document.documentElement).getPropertyValue("--hover-color").trim();
+    let color = getComputedStyle(document.documentElement).getPropertyValue("--main-color").trim();
     let axisColor = getComputedStyle(document.documentElement).getPropertyValue("--correct-font-color").trim();
 
     ctx.strokeStyle = axisColor;

@@ -1,0 +1,10 @@
+:root {
+    --background-color: #ffffff;
+    --main-color: #56949f;
+    --cursor-color: #ea9d34;
+    --font-color: #c4a7e7;
+    --hover-color: #e0def4;
+    --wrong-font-color: #b4637a;
+    --correct-font-color: #286983;
+    --sub-background-color: #f0e9df;
+}
