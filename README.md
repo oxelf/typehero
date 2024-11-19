@@ -20,13 +20,5 @@ The icons are from the [heroicons library](https://heroicons.com).
 
 The js code might be a bit messy, but if it works, it works.
 
-### Minifying
-| File | Size | Minify |
-| index.html | 2.34kb | 1.4kb |  
-| styles.css | 1.63kb | 2.3kb |
-| state.js | 1.76kb | 2.3kb |
-| graph.js | 1.10kb | 2.3kb |
-| index.js | 1.05kb | 2.3kb |
-| select.js | 1.04kb | 2.3kb |
-| statistics.js | 0.98kb | 2.3kb |
-| --- | --- | --- |
+
+
