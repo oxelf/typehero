@@ -8,6 +8,7 @@ console.log("loaded");
 let capsLock = false;
  let themeOptions = ["rose_pine", "rose_pine_dawn", "8008", "retro_light", "carbon"];
 
+ let preventInput = false;
 
 async function run() {
     applyTheme();
@@ -37,6 +38,9 @@ async function run() {
             capsLock = false;
             document.getElementById("caps-lock").style.display = "none";
         }
+        if (preventInput) {
+            return;
+        }
         state.input(event);
     });
 
@@ -53,12 +57,16 @@ async function run() {
 
     let themeButton = document.getElementById("theme-button");
     themeButton.onclick = function() {
+        preventInput = true;
         let theme = localStorage.getItem("theme") || "rose_pine";
-        showSelect(document.getElementById("theme-selection"),themeOptions, theme, function (theme) {
+        showSelect(themeOptions, theme, function (theme) {
+            preventInput = false;
            console.log("selected theme: ", theme);
             localStorage.setItem("theme", theme);
             applyTheme();
-        })
+        }), function () {
+            preventInput = false;
+        }
     }
 }
 
