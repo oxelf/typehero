@@ -52,7 +52,7 @@ export function showSelect(options, selected, onSelect, onClosed) {
     window.addEventListener("click", function(event) {
         console.log("click");
         if (event.target == background) {
-            onClosed;
+            onClosed();
              background.remove();
         }
     }
