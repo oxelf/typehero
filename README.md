@@ -19,6 +19,3 @@ I got the words and quotes from this [repo](https://github.com/monkeytypegame/mo
 The icons are from the [heroicons library](https://heroicons.com).
 
 The js code might be a bit messy, but if it works, it works.
-
-
-
