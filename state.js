@@ -86,7 +86,6 @@ export class GameState {
             this.state = "running";
             this.startTime = Date.now();
         }
-        //   console.log("key pressed: " + event.key);
         // Move Cursor one back. Remove margin for the letter moving to, and add to the next letter
         if (event.key == "Backspace") {
           this.moveCursor(this.cusorPos, this.cusorPos - 1 >= 0 ? this.cusorPos - 1 : 0);

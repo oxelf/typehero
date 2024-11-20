@@ -1,5 +1,6 @@
 # Typehero 
-A school project 
+A school project at the MES
+Pure HTML, CSS and JS (no frameworks, no libs, noting)
 
 It is deployed through Github Pages and can be accessed here: [Typehero](https://oxelf.github.io/typehero/)
 
@@ -14,7 +15,6 @@ It is deployed through Github Pages and can be accessed here: [Typehero](https:/
 
 It is responsive, but there is currently no input handling for mobile.
 
-No dependencies where used in this project.
 I got the words and quotes from this [repo](https://github.com/monkeytypegame/monkeytype/blob/master/frontend/static/quotes/german.json)
 The icons are from the [heroicons library](https://heroicons.com).
 

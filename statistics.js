@@ -5,7 +5,7 @@ export function showAnalytics(state) {
     let timeSeconds = (state.endTime - state.startTime) / 1000;
     let wpm = state.wordAmount / (timeSeconds / 60);
     let accuracy = (1 - state.mistakes.length / state.lettersTyped) * 100;
-    document.getElementById("language-dropdown").style.display = "none";
+    document.getElementById("language-select-button").style.display = "none";
     document.getElementById("replay-button").style.display = "none";
     document.querySelector(".options-menu").style.display = "none";
     content.innerHTML = `

@@ -1,12 +1,17 @@
 <!doctype html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Typehero - Typing Test</title>
+    <title>Leaderboard</title>
     <link rel="stylesheet" href="styles.css" as="style">
+    <script type="module" src="theme.js"></script>
+    <script type="module">
+        import {applyTheme} from "./theme.js";
+        applyTheme()
+    </script>
 </head>
 <body>
 <div style="display: flex; flex-direction: column; height: 100vh; justify-content: space-between">
@@ -25,65 +30,6 @@
             </svg>
         </div>
     </div>
-    <div style="display: flex; flex-direction: column;  justify-content: center; align-items: center; margin-left: 32px; margin-right: 32px ">
-        <div class="options-menu">
-            <div class="option">
-                <h5>Words</h5>
-                </div>
-            <div class="option">
-                <h5>Quote</h5>
-            </div>
-            <div class="options-divider"></div>
-            <div class="option">
-                <h5>10</h5>
-            </div>
-            <div class="option">
-                <h5>25</h5>
-            </div>
-            <div class="option">
-                <h5>50</h5>
-            </div>
-            <div class="option">
-                <h5>75</h5>
-            </div>
-        </div>
-        <div style="height: 32px"></div>
-            <div id="language-select-button" class="dropdown-value">english</div>
-        <div style="height: 16px"></div>
-        <div style="display: flex; flex-direction: column;">
-            <div id="caps-lock" style="display: none; margin: 16px;  font-size: 32px; flex-direction: row; justify-content: center; color: var(--main-color)">CAPS LOCK ON!</div>
-            <div class="content" id="content">
-                <h3>Loading...</h3>
-            </div>
-            <div class="tooltip" style="display: flex; flex-direction: row; justify-content: center; margin-top: 32px">
-            <svg id="replay-button" onclick="window.location.reload()" class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
-            </svg>
-            <span style="margin-top: 32px" class="tooltiptext">Restart</span>
-                </div>
-        </div>
-        </div>
-    <h6>footer</h6>
 </div>
-<div id="theme-selection" class="select-menu-background">
-    <div id="theme-selection-content" class="select-menu">
-    <div style="margin: 8px; align-items: center; display: flex; flex-direction: row;">
-        <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-        </svg>
-        <input class="select-menu-input" autofocus placeholder="Search...">
-    </div>
-    <div class="select-menu-list">
-        </div>
-    </div>
-</div>
-<script type="module" src="auth.js"></script>
-<script type="module" src="select.js"></script>
-<script type="module" src="theme.js"></script>
-<script type="module" src="options.js"></script>
-<script type="module" src="statistics.js"></script>
-<script type="module" src="generate.js"></script>
-<script type="module" src="state.js"></script>
-<script type="module" src="index.js"></script>
 </body>
 </html>
