@@ -32,7 +32,9 @@ export class GameState {
     async newWords() {
         console.log("generating with language: ", this.language, " amount: ", this.wordAmount);
         this.reset();
-        this.words = await generateWords(this.wordAmount, {language: this.language, mode: this.mode});
+        let res = await generateWords(this.wordAmount, {language: this.language, mode: this.mode});
+        this.words = res.words;
+        this.author = res.author;
         this.wordAmount = this.words.length;
     }
 
@@ -59,7 +61,7 @@ export class GameState {
         for (let i = 0; i < this.words.length; i++) {
             let letters = this.words[i].split("");
             let wordDiv = document.createElement("div");
-            wordDiv.style.display = "flex";
+            wordDiv.classList.add("word");
             for (let l  = 0; l < letters.length; l++) {
                 let letterDiv = document.createElement("div");
                 letterDiv.innerText = letters[l];
@@ -78,6 +80,12 @@ export class GameState {
             this.wordDivs.push(spaceDiv);
             this.letterDivs.push(spaceDiv);
             contentDiv.appendChild(spaceDiv);
+        }
+
+        if (this.mode == "quote")  {
+            document.getElementById("quote-author").innerText = "Quote from " + this.author;
+        } else {
+            document.getElementById("quote-author").innerText = "";
         }
     }
 

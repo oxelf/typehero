@@ -240,6 +240,27 @@ html {
     background-color: var(--background-color);
 }
 
+.overlay-background {
+    display: none;
+    position: absolute;
+    left: 50%;top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    background-color: rgba(0, 0,0, 0.50)
+}
+
+.overlay {
+    position: absolute;
+    left: 50%; top: 50%;
+    border-radius: 16px;
+    transform: translate(-50%, -50%);
+    width: min(80vw, 512px);
+    height: 80vh;
+    background-color: var(--background-color);
+}
+
 .select-menu-background {
     display: none;
     position: absolute;
@@ -296,5 +317,35 @@ html {
 
 .select-menu-option .select-menu-icon {
     color: transparent;
+}
+
+.word {
+    display: flex;
+}
+
+.primary-input {
+    width: 100%;
+    margin-left: 8px;
+    background-color: transparent;
+    border: 1px solid var(--font-color);
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 20px;
+    color: var(--font-color);
+}
+
+.primary-input:focus {
+    border: 1px solid var(--main-color);
+    outline: 1px solid var(--main-color);
+}
+
+.primary-button {
+    background-color: var(--main-color);
+    color: var(--sub-background-color);
+    border: none;
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 20px;
+    cursor: pointer;
 }
 

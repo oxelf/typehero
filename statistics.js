@@ -1,10 +1,27 @@
 import {drawGraph} from "./graph.js";
+import {showNameDialog} from "./name_dialog.js";
+import {getId} from "./auth.js";
 
-export function showAnalytics(state) {
+export async function showAnalytics(state) {
+    let words = document.querySelectorAll(".word");
+    let fullCorrectWords = 0;
+    for (let word of words) {
+        let correct = 0;
+        let total = word.children.length;
+        for (let letter of word.children) {
+        if (letter.style.color == "var(--correct-font-color)") {
+            correct++;
+        }
+        }
+        if (correct == total) {
+            fullCorrectWords++;
+        }
+    }
     let content = document.getElementById("content");
     let timeSeconds = (state.endTime - state.startTime) / 1000;
-    let wpm = state.wordAmount / (timeSeconds / 60);
+    let wpm = fullCorrectWords / (timeSeconds / 60);
     let accuracy = (1 - state.mistakes.length / state.lettersTyped) * 100;
+    let userId = getId();
     document.getElementById("language-select-button").style.display = "none";
     document.getElementById("replay-button").style.display = "none";
     document.querySelector(".options-menu").style.display = "none";
@@ -22,7 +39,7 @@ export function showAnalytics(state) {
   </div> 
   <div class="statistics-column">
     <h3 class="tooltip">Time<span class="tooltiptext">Total Time typing</span> </h3>
-    <h2>${timeSeconds.toFixed(0)}s</h2>
+    <h2>${timeSeconds.toFixed(2)}s</h2>
   </div> 
     </div>
     <div class="actions-row">
@@ -35,4 +52,51 @@ export function showAnalytics(state) {
    </div>
     `;
     drawGraph(state);
+    let currName = localStorage.getItem("user-name");
+    if (currName == null) {
+        await showNameDialog(currName,
+            function (newName) {
+                console.log("name selected", newName);
+                currName = newName;
+                localStorage.setItem("user-name", newName);
+                let body = {
+                    userId: userId,
+                    userName: currName,
+                    language: state.language,
+                    wpm: wpm,
+                    accuracy: accuracy,
+                    time: timeSeconds,
+                    mode: state.mode,
+                    wordAmount: (state.mode == "quote")? 0:  state.wordAmount,
+                };
+                postResults(body);
+            },
+            function () {
+            }
+        );
+    }
+
+    if (currName != null) {
+        let body = {
+            userId: userId,
+            userName: currName,
+            language: state.language,
+            wpm: wpm,
+            accuracy: accuracy,
+            time: timeSeconds,
+            mode: state.mode,
+            wordAmount: (state.mode == "quote")? 0:  state.wordAmount,
+        };
+        postResults(body);
+    }
+}
+
+function postResults(body) {
+    fetch("https://typehero.oxelf.dev/result", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body),
+    });
 }

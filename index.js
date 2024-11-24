@@ -3,6 +3,7 @@ import { initOptions } from "./options.js";
 import {applyTheme}  from "./theme.js";
 import {showSelect} from "./select.js";
 import {getId} from "./auth.js";
+
 console.log("loaded");
 
 let capsLock = false;

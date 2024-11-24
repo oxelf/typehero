@@ -4,83 +4,18 @@ import {applyTheme} from "./theme.js";
 let themeOptions = ["rose_pine", "rose_pine_dawn", "8008", "retro_light", "carbon"];
 
 async function getLeaderboardData(mode, language, words) {
-    await new Promise(resolve => setTimeout(resolve, 1000));
-
-    return [
-        {
-            name: "oxelf",
-            rank: 1,
-            wpm: 100,
-            accuracy: 100.0,
-            date: Date.now(),
-        },
-        {
-            name: "leon",
-            rank: 2,
-            wpm: 90,
-            accuracy: 99.0,
-            date: Date.now(),
-        },
-        {
-            name: "jimmy",
-            rank: 3,
-            wpm: 80,
-            accuracy: 98.0,
-            date: Date.now(),
-        },
-        {
-            name: "jane",
-            rank: 4,
-            wpm: 70,
-            accuracy: 97.0,
-            date: Date.now(),
-        },
-        {
-            name: "joe",
-            rank: 5,
-            wpm: 60,
-            accuracy: 96.0,
-            date: Date.now(),
-        },
-        {
-            name: "jill",
-            rank: 6,
-            wpm: 50,
-            accuracy: 95.0,
-            date: Date.now(),
-        },
-        {
-            name: "john",
-            rank: 7,
-            wpm: 40,
-            accuracy: 94.0,
-            date: Date.now(),
-        },
-        {
-            name: "jake",
-            rank: 8,
-            wpm: 30,
-            accuracy: 93.0,
-            date: Date.now(),
-        },
-        {
-            name: "josh",
-            rank: 9,
-            wpm: 20,
-            accuracy: 92.0,
-            date: Date.now(),
-        },
-        {
-            name: "jason",
-            rank: 10,
-            wpm: 10,
-            accuracy: 91.0,
-            date: Date.now(),
-        }
-    ];
+    let response = await fetch(`https://typehero.oxelf.dev/leaderboard?mode=${mode}&wordAmount=${words}&language=${language}`, {});
+    return await response.json();
 }
 
 export async function populateLeaderboard(mode, language, words) {
+    let title = language + " - ";
+    if (mode == "quote") {
+        title += "Quotes";
+    } else {
+        title += words.toString() + " Words";
+    }
+    document.getElementById("leaderboard-title").innerText = title;
 let data = await getLeaderboardData(mode,language, words);
 let leaderboard = document.querySelector(".leaderboard-table");
 leaderboard.innerHTML = `
@@ -92,15 +27,20 @@ leaderboard.innerHTML = `
             <th style="width: 200px">Date</th>
         </tr>
 `;
+data.sort(
+    (a, b) => {
+       return a.rank - b.rank;
+    }
+);
 data.forEach((entry) => {
     let date = new Date(entry.date);
     let stringDate = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
     leaderboard.innerHTML += `
 <tr>
           <td>${entry.rank}</td>
-            <td>${entry.name}</td>
-            <td style="width: 100px;">${entry.wpm}</td>
-            <td style="width: 100px">${entry.accuracy}</td>
+            <td>${entry.userName}</td>
+            <td style="width: 100px;">${entry.wpm.toFixed(2)}</td>
+            <td style="width: 100px">${entry.accuracy.toFixed(2)}</td>
             <td style="width: 200px;">${stringDate}</td>
         </tr>
         `;});
@@ -117,4 +57,8 @@ themeButton.onclick = function() {
     }, function () {
     });
 }
-populateLeaderboard("words", "english", 50);
+let language = localStorage.getItem("typing-language") || "english";
+let words = parseInt(localStorage.getItem("typing-words")) || 25;
+let mode = localStorage.getItem("typing-mode") || "words";
+words = (mode == "quote")? 0:  words;
+populateLeaderboard(mode, language, words);

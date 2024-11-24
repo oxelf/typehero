@@ -10,11 +10,11 @@ export async function generateWords(length, opts) {
             let randomIndex = Math.floor(Math.random() * words.length);
             randomWords.push(words[randomIndex]);
         }
-        return randomWords;
+        return {words: randomWords};
     } else {
         let quotes = await getQuotes(language);
         let randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-        return randomQuote.text.split(" ");
+        return {words: randomQuote.text.split(" "), author: randomQuote.source};
     }
 }
 
