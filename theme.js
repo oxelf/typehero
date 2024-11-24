@@ -6,6 +6,7 @@ export function applyTheme() {
     } else if(!theme) {
         theme = "retro_light";
     }
+    localStorage.setItem("theme", theme);
     document.head.insertAdjacentHTML(
         'beforeend',
         '<link rel="stylesheet" href="themes/' + theme + '.css" />');
