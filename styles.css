@@ -175,7 +175,12 @@ html {
     display: inline-block;
 }
 
-.tooltip .tooltiptext {
+a:hover * {
+    cursor: pointer;
+    color: var(--main-color);
+}
+
+.tooltip span {
     visibility: hidden;
     width: 120px;
     background-color: black;
@@ -190,7 +195,7 @@ html {
 .tooltip:hover {
     cursor: default;
 }
-.tooltip:hover .tooltiptext {
+.tooltip:hover span {
     visibility: visible;
 }
 

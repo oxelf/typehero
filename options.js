@@ -40,6 +40,7 @@ export async function initOptions(state) {
             } else {
                 state.wordAmount = parseInt(key);
                 localStorage.setItem("typing-words", key);
+                console.log("selected: ", key);
                 state.reset();
                 await state.newWords();
                 state.renderWords();

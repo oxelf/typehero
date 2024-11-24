@@ -12,7 +12,6 @@ export class GameState {
         this.wpmTimeSeries = [];
         this.wordPos = 0;
         this.words = [];
-        this.wordDivs = [];
         this.letterDivs = [];
         this.language = "english";
         this.wordAmount = 50;
@@ -23,7 +22,6 @@ export class GameState {
         this.startTime = null;
         this.endTime = null;
         this.letterDivs = [];
-        this.wordDivs = [];
         this.state = "idle";
         this.cusorPos = 0;
         this.wordPos = 0;
@@ -44,12 +42,6 @@ export class GameState {
         this.wordAmount = parseInt(localStorage.getItem("typing-words")) || 25;
     }
 
-     listen() {
-        window.addEventListener("opts-change", function() {
-            let language = localStorage.getItem("typing-language") || "english";
-        });
-    }
-
     async renderWords() {
         let contentDiv = document.getElementById("content");
         contentDiv.innerHTML = "";
@@ -58,32 +50,38 @@ export class GameState {
         blinkingCursor.classList.add("blinking-cursor");
         contentDiv.appendChild(blinkingCursor);
 
+        /*
+        for every word we make a word div that holds the letters, to avoid the letters
+        overflowing into the next line by the wrap.
+         */
         for (let i = 0; i < this.words.length; i++) {
             let letters = this.words[i].split("");
             let wordDiv = document.createElement("div");
             wordDiv.classList.add("word");
+
             for (let l  = 0; l < letters.length; l++) {
                 let letterDiv = document.createElement("div");
                 letterDiv.innerText = letters[l];
                 letterDiv.classList.add("letter");
+                // the cursor would be shifted when hes at a space
+                // to avoid that the first letter wont have the cursor spacing
                 if (i == 0 && l == 0) {
                     letterDiv.style.marginLeft = "0px";
                 }
                 wordDiv.appendChild(letterDiv);
                 this.letterDivs.push(letterDiv);
             }
-            this.wordDivs.push(wordDiv);
             contentDiv.appendChild(wordDiv);
 
+            // space between words
             let spaceDiv = document.createElement("div");
             spaceDiv.classList.add("spacer");
-            this.wordDivs.push(spaceDiv);
             this.letterDivs.push(spaceDiv);
             contentDiv.appendChild(spaceDiv);
         }
 
         if (this.mode == "quote")  {
-            document.getElementById("quote-author").innerText = "Quote from " + this.author;
+            document.getElementById("quote-author").innerText = `Quote from "${this.author}"`;
         } else {
             document.getElementById("quote-author").innerText = "";
         }
@@ -100,33 +98,40 @@ export class GameState {
         } else {
             this.moveCursor(this.cusorPos, this.cusorPos + 1);
             let lastLetter = this.letterDivs[this.cusorPos - 1];
-
-            if (event.key == lastLetter.innerText) {
-                lastLetter.style.color = "var(--correct-font-color)";
-            } else {
-                if (lastLetter.innerText != "") {
-                    lastLetter.style.color = "var(--wrong-font-color)";
-                    console.log("mistake: ", lastLetter.innerText, " typed: ", event.key);
-                    this.mistakes.push(Date.now() - this.startTime);
+            // color the letter if its correct or wrong
+            if (lastLetter) {
+                if (event.key == lastLetter.innerText) {
+                    lastLetter.style.color = "var(--correct-font-color)";
+                } else {
+                    if (lastLetter.innerText != "") {
+                        lastLetter.style.color = "var(--wrong-font-color)";
+                        console.log("mistake: ", lastLetter.innerText, " typed: ", event.key);
+                        this.mistakes.push(Date.now() - this.startTime);
+                    }
                 }
             }
-
             this.lettersTyped++;
         }
 
          let lastLetter = this.letterDivs[this.cusorPos - 1];
+        let letter = this.letterDivs[this.cusorPos];
+         if (!lastLetter) {
+             return;
+         }
          let contentDiv = document.getElementById("content");
          let wordDiv = lastLetter.parentElement;
          const index = Array.prototype.indexOf.call(contentDiv.children, wordDiv);
 
+         // if index is -1, we are at a space currently, therefore we finished a word
          if (index != -1) {
              this.wordPos = index / 2;
          } else {
-             console.log("reached end of word: ", this.wordPos + 1);
+             // keep count of when we finished a word
              this.wpmTimeSeries.push(Date.now() - this.startTime);
          }
 
-         if (lastLetter == this.letterDivs[this.letterDivs.length - 1]) {
+
+         if (letter == this.letterDivs[this.letterDivs.length - 1]) {
              console.log("reached real end");
              this.state = "finished";
              this.endTime = Date.now();
