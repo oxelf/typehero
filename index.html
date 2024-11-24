@@ -8,7 +8,7 @@
 </head>
 <body>
 <div style="display: flex; flex-direction: column; height: 100vh; justify-content: space-between">
-    <div class="header">
+    <header class="header">
         <a style="text-decoration: none; color: inherit" href="index.html"><h1>Typehero</h1></a>
         <div style="display: flex; flex-direction: row; gap: 12px">
             <a style="text-decoration: none; color: inherit" href="leaderboard.html"><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -22,7 +22,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
             </svg> -->
         </div>
-    </div>
+    </header>
     <div style="display: flex; flex-direction: column;  justify-content: center; align-items: center; margin-left: 32px; margin-right: 32px ">
         <div class="options-menu">
             <div class="option">
@@ -66,7 +66,7 @@
             </div>
         </div>
     </div>
-    <div style="display: flex; flex-direction: row; justify-content: center; align-items: center">
+    <footer style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 8px">
         <a target="_blank" style="text-decoration: none; color: inherit" href="https://github.com/oxelf/typehero">
         <div style="display: flex; flex-direction: row; align-items: center; gap: 8px">
         <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -75,8 +75,12 @@
         <h6>Source Code</h6>
             </div>
         </a>
-    </div>
+       <div id="footer-recaptcha">
+           <p>This site is protected by reCAPTCHA</p>
+       </div>
+    </footer>
 </div>
+<script src="https://www.google.com/recaptcha/api.js?render=6Ldg2ogqAAAAAPCVbF6kSiJefDqw2hjHGb_jr2qC"></script>
 <script type="module" src="auth.js"></script>
 <script type="module" src="name_dialog.js"></script>
 <script type="module" src="select.js"></script>

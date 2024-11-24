@@ -91,7 +91,9 @@ export async function showAnalytics(state) {
     }
 }
 
-function postResults(body) {
+async function postResults(body) {
+    const token = await grecaptcha.execute('6Ldg2ogqAAAAAPCVbF6kSiJefDqw2hjHGb_jr2qC', { action: 'submit' });
+    body.captchaToken = token;
     fetch("https://typehero.oxelf.dev/result", {
         method: "POST",
         headers: {

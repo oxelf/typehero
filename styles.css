@@ -354,3 +354,15 @@ a:hover * {
     cursor: pointer;
 }
 
+#footer-recaptcha {
+    display: flex;
+    flex-direction: row;
+}
+
+#footer-recaptcha * {
+    font-size: 0.5rem;
+}
+
+.grecaptcha-badge {
+    visibility: hidden !important;
+}

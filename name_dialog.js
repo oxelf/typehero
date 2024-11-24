@@ -10,6 +10,7 @@ export function showNameDialog(currentName, onSelect, onClosed) {
     </div>
     <div style="display: flex; flex-direction: column; justify-content: end; height: 30%">
     <div style="display: flex; flex-direction: row; justify-content: end; gap: 8px; margin-right: 8px">
+    <div id="error" style="color: var(--wrong-font-color)"></div>
     <button class="primary-button">Submit</button>
     </div>
     </div>
@@ -26,12 +27,26 @@ export function showNameDialog(currentName, onSelect, onClosed) {
 
     let submitButton = background.querySelector(".primary-button");
     submitButton.onclick = function() {
+        if (input.value.length > 16 || input.value.length < 3) {
+            return;
+        }
         onSelect(input.value);
         background.style.display = "none";
     }
 
     input.addEventListener("keydown", function(event) {
         event.stopImmediatePropagation();
+        if (input.value.length > 16) {
+           document.getElementById("error").innerText = "Name too long"; 
+           return;
+        } else {
+            if (input.value.length < 3) {
+                document.getElementById("error").innerText = "Name too short";
+                return;
+            } else {
+                document.getElementById("error").innerText = "";
+            }
+        }
         if (event.key == "Enter") {
             onSelect(input.value);
             background.style.display = "none";
