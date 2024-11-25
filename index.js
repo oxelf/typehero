@@ -3,6 +3,7 @@ import { initOptions } from "./options.js";
 import {applyTheme}  from "./theme.js";
 import {showSelect} from "./select.js";
 import {getId} from "./auth.js";
+import {numberSpinner} from "./text_animations.js";
 
 console.log("loaded");
 
@@ -12,6 +13,7 @@ let languageOptions = ["english", "german"];
  let preventInput = false;
 
 async function run() {
+    numberSpinner(document.getElementById("title"));
     let id = getId();
     console.log("user id: ", id);
     applyTheme();
@@ -84,6 +86,16 @@ async function run() {
             preventInput = false;
         });
     }
+
+    loadStats()
+    fetch("https://typehero.oxelf.dev/view")
+}
+
+async function loadStats() {
+    let stats = await fetch("http://typehero.oxelf.dev/stats");
+    let json = await stats.json();
+    document.getElementById("view-count").innerText = json.siteViews;
+    document.getElementById("tests-count").innerText = json.testsStarted;
 }
 
 

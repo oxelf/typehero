@@ -8,6 +8,12 @@ It is deployed through Github Pages and can be accessed here: [Typehero](https:/
 
 The Server for the Leaderboard can be found [here](https://github.com/oxelf/typehero-server/) 
 
+
+> Ich habe captchas als ein Schutz vor Cheating eingebaut,
+> da Bogdan versucht hat, die Security zu umgehen.
+> Erfolgreich wolgemerkt
+
+
 ### Features
 - Typing speed test
 - Online Alltime Leaderboard
@@ -29,7 +35,7 @@ The Server for the Leaderboard can be found [here](https://github.com/oxelf/type
 - [x] Eingabefelder (Suchfelder bei theme auswahl sowie bei der Sprachauswahl)
 - [x] Buttons (Button zum Restarten und ein button um den Namen des Nutzer festzulegen)
 - [x] Eingabefelder (Nutzer kann seinen Namen festlegen. Dafür einmal einen Test machen, es öffnet sich ein Dialog)
-- [x] Seitenaufrufzähler (Im footer steht die Anzahl der Seitenaufrufe und gestarteten Tests)
+- [] Seitenaufrufzähler (Im footer steht die Anzahl der Seitenaufrufe und gestarteten Tests)
 - [x] Css Animation (Der Blinkende Cursor ist eine Css animation)
 - [x] Tageszeitengesteurtes Design (Der Nutzer kann nach belieben das Theme zwischen dark und light themes ändern)
 

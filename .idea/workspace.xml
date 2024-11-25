@@ -4,45 +4,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="672774e9-ce68-4dce-a417-c9d8ccf3d671" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="962bef79-bab6-4128-9718-c5b373bdca58" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/text_animations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/name_dialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/name_dialog.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics.js" beforeDir="false" afterPath="$PROJECT_DIR$/statistics.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="GOROOT" url="file:///opt/homebrew/opt/go/libexec" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;oxelf&quot;
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "oxelf"
   }
-}</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/oxelf/typehero.git&quot;,
-    &quot;accountId&quot;: &quot;ff5a1d29-70b6-43fd-970e-89b315efeb16&quot;
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/oxelf/typehero.git",
+    "accountId": "ff5a1d29-70b6-43fd-970e-89b315efeb16"
   }
-}</component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/statistics.js" root0="SKIP_INSPECTION" />
-  </component>
-  <component name="KubernetesApiPersistence">{}</component>
-  <component name="KubernetesApiProvider">{
-  &quot;isMigrated&quot;: true
-}</component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 4
-}</component>
-  <component name="ProjectId" id="2otFyMBqhiBrNQOlxCAPExrzIze" />
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4
+}]]></component>
+  <component name="ProjectId" id="2pJNShdht8nbxdW2erEpRLF6cHQ" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -52,14 +45,13 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "JavaScript Debug.index.html.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.go.formatter.settings.were.checked": "true",
     "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "Shell Script.Unnamed.executor": "Debug",
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "main",
     "go.import.settings.migrated": "true",
+    "go.sdk.automatically.set": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/joscha/Documents/dev/html/typing_test",
     "node.js.detected.package.eslint": "true",
@@ -67,37 +59,10 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.keymap",
     "show.migrate.to.gradle.popup": "false",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/themes" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/quotes" />
-      <recent name="$PROJECT_DIR$/words" />
-    </key>
-  </component>
-  <component name="RunManager">
-    <configuration name="Unnamed" type="ShConfigurationType" nameIsGenerated="true">
-      <option name="SCRIPT_TEXT" value="browser-sync start --server --files &quot;*.html, *.css *.js&quot;" />
-      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
-      <option name="SCRIPT_PATH" value="" />
-      <option name="SCRIPT_OPTIONS" value="" />
-      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
-      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
-      <option name="INTERPRETER_PATH" value="/bin/zsh" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="EXECUTE_IN_TERMINAL" value="true" />
-      <option name="EXECUTE_SCRIPT_FILE" value="false" />
-      <envs />
-      <method v="2" />
-    </configuration>
-  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -109,57 +74,19 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="672774e9-ce68-4dce-a417-c9d8ccf3d671" name="Changes" comment="" />
-      <created>1731681219796</created>
+      <changelist id="962bef79-bab6-4128-9718-c5b373bdca58" name="Changes" comment="" />
+      <created>1732480219626</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1731681219796</updated>
-      <workItem from="1731681220805" duration="86048000" />
-      <workItem from="1732086030775" duration="14598000" />
-      <workItem from="1732201558246" duration="26945000" />
-      <workItem from="1732461881820" duration="2452000" />
-      <workItem from="1732469422448" duration="55000" />
-      <workItem from="1732469501355" duration="3131000" />
+      <updated>1732480219626</updated>
+      <workItem from="1732480220774" duration="5376000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
-  </component>
-  <component name="com.gk646.codestats.settings.Save">
-    <option name="genericTimePoints">
-      <list>
-        <TimePoint>
-          <option name="timestamp" value="1731880495072" />
-          <option name="linesCode" value="43407" />
-          <option name="totalLines" value="43499" />
-          <option name="info" value="17.11.2024" />
-        </TimePoint>
-        <TimePoint>
-          <option name="timestamp" value="1732200162181" />
-          <option name="linesCode" value="43780" />
-          <option name="totalLines" value="43976" />
-          <option name="info" value="21.11.2024" />
-        </TimePoint>
-      </list>
-    </option>
   </component>
 </project>
