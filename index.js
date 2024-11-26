@@ -92,7 +92,7 @@ async function run() {
 }
 
 async function loadStats() {
-    let stats = await fetch("http://typehero.oxelf.dev/stats");
+    let stats = await fetch("https://typehero.oxelf.dev/stats");
     let json = await stats.json();
     document.getElementById("view-count").innerText = json.siteViews;
     document.getElementById("tests-count").innerText = json.testsStarted;
