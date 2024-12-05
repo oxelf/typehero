@@ -8,7 +8,7 @@ import {numberSpinner} from "./text_animations.js";
 console.log("loaded");
 
 let capsLock = false;
- let themeOptions = ["rose_pine", "rose_pine_dawn", "8008", "retro_light", "carbon"];
+ let themeOptions = ["rose_pine", "rose_pine_dawn", "8008", "retro_light", "carbon", "forest"];
 let languageOptions = ["english", "german"];
  let preventInput = false;
 

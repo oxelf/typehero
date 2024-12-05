@@ -1,7 +1,7 @@
 import {showSelect} from "./select.js";
 import {applyTheme} from "./theme.js";
 
-let themeOptions = ["rose_pine", "rose_pine_dawn", "8008", "retro_light", "carbon"];
+let themeOptions = ["rose_pine", "rose_pine_dawn", "8008", "forest", "retro_light", "carbon"];
 
 async function getLeaderboardData(mode, language, words) {
     let response = await fetch(`https://typehero.oxelf.dev/leaderboard?mode=${mode}&wordAmount=${words}&language=${language}`, {});

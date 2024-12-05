@@ -35,7 +35,7 @@ The Server for the Leaderboard can be found [here](https://github.com/oxelf/type
 - [x] Eingabefelder (Suchfelder bei theme auswahl sowie bei der Sprachauswahl)
 - [x] Buttons (Button zum Restarten und ein button um den Namen des Nutzer festzulegen)
 - [x] Eingabefelder (Nutzer kann seinen Namen festlegen. Dafür einmal einen Test machen, es öffnet sich ein Dialog)
-- [] Seitenaufrufzähler (Im footer steht die Anzahl der Seitenaufrufe und gestarteten Tests)
+- [x] Seitenaufrufzähler (Im footer steht die Anzahl der Seitenaufrufe und gestarteten Tests)
 - [x] Css Animation (Der Blinkende Cursor ist eine Css animation)
 - [x] Tageszeitengesteurtes Design (Der Nutzer kann nach belieben das Theme zwischen dark und light themes ändern)
 
