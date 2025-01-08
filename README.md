@@ -14,6 +14,7 @@ The Server for the Leaderboard can be found [here](https://github.com/oxelf/type
 - different modes, such as words/quotes and how much words
 - customizable theme of the website
 - data is stored in local storage
+- Captcha to avoid cheating by sending a direct post request to the server
 
 I got the words and quotes from this [repo](https://github.com/monkeytypegame/monkeytype/blob/master/frontend/static/quotes/german.json)
 The icons are from the [heroicons library](https://heroicons.com).
