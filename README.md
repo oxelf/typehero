@@ -1,4 +1,7 @@
 # Typehero 
+
+![](https://tokei.rs/b1/github/oxelf/typehero)
+
 A school project at the MES
 
 Pure HTML, CSS and JS (no frameworks, no libs, nothing)
