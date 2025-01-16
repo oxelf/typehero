@@ -53,6 +53,7 @@ export async function showAnalytics(state) {
     `;
     drawGraph(state);
     let currName = localStorage.getItem("user-name");
+    // weird behaviour, should be null, sometimes ""
     if (currName == null || currName == "") {
         await showNameDialog(currName,
             function (newName) {
