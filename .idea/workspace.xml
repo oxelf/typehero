@@ -12,6 +12,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FormatOnSaveOptions">
+    <option name="mySelectedFileTypes">
+      <set>
+        <option value="Go" />
+      </set>
+    </option>
+  </component>
   <component name="GOROOT" url="file:///opt/homebrew/opt/go/libexec" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -84,7 +91,7 @@
       <workItem from="1732480220774" duration="12435000" />
       <workItem from="1736355263920" duration="916000" />
       <workItem from="1736364425453" duration="6000" />
-      <workItem from="1736364441214" duration="600000" />
+      <workItem from="1736364441214" duration="4489000" />
     </task>
     <servers />
   </component>
@@ -93,5 +100,17 @@
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
+  </component>
+  <component name="com.gk646.codestats.settings.Save">
+    <option name="genericTimePoints">
+      <list>
+        <TimePoint>
+          <option name="timestamp" value="1736924591081" />
+          <option name="linesCode" value="43980" />
+          <option name="totalLines" value="44214" />
+          <option name="info" value="15.01.2025" />
+        </TimePoint>
+      </list>
+    </option>
   </component>
 </project>

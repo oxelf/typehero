@@ -53,7 +53,7 @@ export async function showAnalytics(state) {
     `;
     drawGraph(state);
     let currName = localStorage.getItem("user-name");
-    if (currName == null) {
+    if (currName == null || currName == "") {
         await showNameDialog(currName,
             function (newName) {
                 console.log("name selected", newName);
