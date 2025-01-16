@@ -7,6 +7,7 @@ import {numberSpinner} from "./text_animations.js";
 
 console.log("loaded");
 
+applyTheme();
 let capsLock = false;
  let themeOptions = ["rose_pine", "rose_pine_dawn", "8008", "retro_light", "carbon", "forest"];
 let languageOptions = ["english", "german"];
@@ -16,7 +17,6 @@ async function run() {
     numberSpinner(document.getElementById("title"));
     let id = getId();
     console.log("user id: ", id);
-    applyTheme();
     let state = new GameState();
     state.loadPreferences();
     await state.newWords();
