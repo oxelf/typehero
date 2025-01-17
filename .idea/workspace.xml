@@ -5,24 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="962bef79-bab6-4128-9718-c5b373bdca58" name="Changes" comment="fixed possible localstorage bug">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/minify.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/minify.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/minify.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generate.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/generate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graph.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/graph.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/leaderboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/leaderboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/leaderboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/leaderboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/name_dialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/name_dialog.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/options.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/select.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/select.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/state.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/state.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/statistics.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/text_animations.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/text_animations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/theme.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/theme.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/words/english.json" beforeDir="false" afterPath="$PROJECT_DIR$/words/english.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/words/german.json" beforeDir="false" afterPath="$PROJECT_DIR$/words/german.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +99,7 @@
       <workItem from="1736364441214" duration="4489000" />
       <workItem from="1737033228853" duration="11009000" />
       <workItem from="1737151036486" duration="375000" />
-      <workItem from="1737151431791" duration="561000" />
+      <workItem from="1737151431791" duration="696000" />
     </task>
     <task id="LOCAL-00001" summary="fixed possible localstorage bug">
       <option name="closed" value="true" />

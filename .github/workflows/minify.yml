@@ -21,12 +21,12 @@ jobs:
       - name: Minify JS and CSS
         run: |
           mkdir -p dist/js dist/css
-          find src -name "*.js" -exec esbuild {} --minify --outdir=dist/js \;
-          find src -name "*.css" -exec esbuild {} --minify --outdir=dist/css \;
+          find . -name "*.js" -exec esbuild {} --minify --outdir=dist/js \;
+          find . -name "*.css" -exec esbuild {} --minify --outdir=dist/css \;
 
       - name: Update import paths
         run: |
-          find dist -type f -name "*.js" -exec sed -i 's|src/|dist/|g' {} \;
+          find dist -type f -name "*.js" -exec sed -i 's|dist/|g' {} \;
 
       - name: Commit changes
         run: |
