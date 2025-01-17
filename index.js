@@ -1,17 +1,17 @@
-import { GameState} from "./state.js";
-import { initOptions } from "./options.js";
-import {applyTheme}  from "./theme.js";
-import {showSelect} from "./select.js";
-import {getId} from "./auth.js";
-import {numberSpinner} from "./text_animations.js";
+import { GameState} from "./js/state.js";
+import { initOptions } from "./js/options.js";
+import {applyTheme}  from "./js/theme.js";
+import {showSelect} from "./js/select.js";
+import {getId} from "./js/auth.js";
+import {numberSpinner} from "./js/text_animations.js";
 
 console.log("loaded");
 
 applyTheme();
-let capsLock = false;
- let themeOptions = ["rose_pine", "rose_pine_dawn", "8008", "retro_light", "carbon", "forest"];
+let themeOptions = ["rose_pine", "rose_pine_dawn", "8008", "retro_light", "carbon", "forest"];
 let languageOptions = ["english", "german"];
- let preventInput = false;
+let preventInput = false;
+let capsLock = false;
 
 async function run() {
     numberSpinner(document.getElementById("title"));
@@ -61,7 +61,7 @@ async function run() {
         showSelect(languageOptions, language, async function (language) {
             preventInput = false;
             console.log("selected language: ", language);
-           localStorage.setItem("typing-language", language);
+            localStorage.setItem("typing-language", language);
             state.language = language;
             languageSelectButton.innerText = state.language;
             state.reset();
@@ -79,7 +79,7 @@ async function run() {
         let theme = localStorage.getItem("theme") || "rose_pine";
         showSelect(themeOptions, theme, function (theme) {
             preventInput = false;
-           console.log("selected theme: ", theme);
+            console.log("selected theme: ", theme);
             localStorage.setItem("theme", theme);
             applyTheme();
         }, function () {

@@ -1,0 +1,39 @@
+name: Minify and Update Assets
+
+on: push
+
+jobs:
+  minify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install dependencies
+        run: npm install --global esbuild
+
+      - name: Minify JS and CSS
+        run: |
+          mkdir -p dist/js dist/css
+          find src -name "*.js" -exec esbuild {} --minify --outdir=dist/js \;
+          find src -name "*.css" -exec esbuild {} --minify --outdir=dist/css \;
+
+      - name: Update import paths
+        run: |
+          find dist -type f -name "*.js" -exec sed -i 's|src/|dist/|g' {} \;
+
+      - name: Commit changes
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add dist/
+          git commit -m "Minify assets and update import paths"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
