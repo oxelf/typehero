@@ -1,0 +1,1 @@
+export function applyTheme(){let e=localStorage.getItem("theme");!e&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?e="rose_pine":e||(e="retro_light"),localStorage.setItem("theme",e),document.head.insertAdjacentHTML("beforeend",'<link rel="stylesheet" href="themes/'+e+'.css" />')}
