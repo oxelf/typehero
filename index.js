@@ -1,9 +1,7 @@
 import { GameState} from "./js/state.js";
-import { initOptions } from "./js/options.js";
 import {applyTheme}  from "./js/theme.js";
 import {showSelect} from "./js/select.js";
 import {getId} from "./js/auth.js";
-import {numberSpinner} from "./js/text_animations.js";
 
 console.log("loaded");
 
@@ -14,7 +12,6 @@ let preventInput = false;
 let capsLock = false;
 
 async function run() {
-    numberSpinner(document.getElementById("title"));
     let id = getId();
     console.log("user id: ", id);
     let state = new GameState();
@@ -50,7 +47,31 @@ async function run() {
     });
 
 
-    initOptions(state);
+
+    // mode selection
+    let toggleGroup = document.querySelector("toggle-group");
+    toggleGroup.onchange = async function (e) {
+        if (e.value == "Words") {
+            state.mode = "words";
+            localStorage.setItem("typing-mode", "words");
+            state.reset();
+            state.wordAmount = parseInt(toggleGroup.secondValue);
+            await state.newWords();
+            state.renderWords();
+        } else if (e.value == "Quote") {
+            state.mode = "quote";
+            localStorage.setItem("typing-mode", "quote");
+            state.reset();
+            await state.newWords();
+            state.renderWords();
+        } else {
+            state.wordAmount = parseInt(e.value);
+            localStorage.setItem("typing-words", e.value);
+            state.reset();
+            await state.newWords();
+            state.renderWords();
+        }
+    }
 
     // language selection button
     let languageSelectButton = document.querySelector(".dropdown-value");

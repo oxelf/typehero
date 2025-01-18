@@ -14,7 +14,7 @@ export class GameState {
         this.words = [];
         this.letterDivs = [];
         this.language = "english";
-        this.wordAmount = 50;
+        this.wordAmount = 25;
     }
 
     reset() {
